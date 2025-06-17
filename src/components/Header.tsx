@@ -4,6 +4,7 @@ import {
   SheetContent,
   SheetDescription,
   SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { config } from "@/config";
@@ -12,6 +13,9 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FunctionComponent } from "react";
+import { DialogContent, DialogTitle } from "@radix-ui/react-dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+
 interface MenuItem {
   name: string;
   href: string;
@@ -43,12 +47,39 @@ export const Navigation: FunctionComponent = () => {
         ))}
       </div>
       <div className="md:hidden">
+        {/* <Sheet>
+          <SheetTrigger>
+            <Menu size="24" />
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetDescription>
+                {menuItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target={item.openInNewTab ? "_blank" : "_self"}
+                    className={cn(
+                      "block py-2",
+                      pathname === item.href && "font-semibold"
+                    )}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet> */}
         <Sheet>
           <SheetTrigger>
             <Menu size="24" />
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
+              <SheetTitle>
+                <VisuallyHidden>Menu</VisuallyHidden>
+              </SheetTitle>
               <SheetDescription>
                 {menuItems.map((item) => (
                   <a

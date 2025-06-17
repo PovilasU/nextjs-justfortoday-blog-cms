@@ -4,7 +4,7 @@ import { config } from "@/config";
 import { signOgImageUrl } from "@/lib/og-image";
 import Markdown from "react-markdown";
 
-const content = `# About Me
+const content1 = `# About Me
 
 ![Samantha](https://imagedelivery.net/lLmNeOP7HXG0OqaG97wimw/clvlugru90000o4g8ahxp069s/db7abbe3-aa5c-433e-a16d-cbf137d1c9e5.png/public)
 
@@ -25,6 +25,8 @@ Let's go on an adventure!
 Love,
 
 Samantha`;
+
+const content = ` About Me`;
 
 export async function generateMetadata() {
   return {
